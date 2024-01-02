@@ -1,0 +1,5 @@
+echo "profesor" | sudo -S mysql -u root -pprofesor -e "SET GLOBAL time_zone = '+3:00';"
+echo "profesor" | sudo -S mysql -u root -pprofesor -e "create database biblioteca;"
+echo "profesor" | sudo -S mysql -u root -pprofesor -e "create user bibliotecario identified by 'bibliotecario';"
+echo "profesor" | sudo -S mysql -u root -pprofesor -e "grant all privileges on biblioteca.* to 'bibliotecario';"
+echo "profesor" | sudo -S mysql -u root -pprofesor -D biblioteca -e "create table libros (isbn INT(13) primary key, titulo varchar(30) not null, autor varchar(30) not null);"
